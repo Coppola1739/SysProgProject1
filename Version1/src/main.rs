@@ -4,6 +4,7 @@ use std::fs::File;
 use std::fs;
 use std::path::Path;
 use std::time::{Instant, Duration};
+mod lib;
 
 fn main() {
     println!("Please enter the data folder path: ");

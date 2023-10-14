@@ -8,7 +8,7 @@ use std::io::{BufRead, BufReader, Write};
 use std::sync::mpsc::Sender;
 
 
-pub(crate) fn process_input_file(folder_path: &Path, summary: Arc<Mutex<String>>) {
+pub fn process_input_file(folder_path: &Path, summary: Arc<Mutex<String>>) {
     if let Ok(entries) = fs::read_dir(folder_path) {
         let mut handles = vec![];
 
@@ -40,7 +40,7 @@ pub(crate) fn write_to_summary_file(file_path: String, summary: Arc<Mutex<String
         summary.push_str(&content);
     }
 }
-pub(crate) fn write_summary_to_file(file_path: &str, summary: Arc<Mutex<String>>) {
+pub fn write_summary_to_file(file_path: &str, summary: Arc<Mutex<String>>) {
     let summary = summary.lock().unwrap();
     let mut file = OpenOptions::new()
         .create(true)

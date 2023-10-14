@@ -5,7 +5,10 @@ use std::fs;
 use std::path::Path;
 use std::sync::{Arc, Mutex};
 use std::time::{Instant, Duration};
+mod lib;
 use crate::lib::{process_input_file, write_summary_to_file};
+
+
 
 fn main() {
     env_logger::init();
